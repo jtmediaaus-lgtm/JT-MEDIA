@@ -1,4 +1,4 @@
-/* Oysterbedz — small interactions: mobile nav, scroll reveal, footer year */
+/* Oysterbedz — small interactions: mobile nav, scroll reveal, click-to-load map, footer year */
 (function () {
   "use strict";
 
@@ -40,6 +40,21 @@
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+  // Click-to-load map: don't load Google (and its cookies) until the visitor opts in
+  var mapBtn = document.getElementById("map-load");
+  if (mapBtn) {
+    mapBtn.addEventListener("click", function () {
+      var src = mapBtn.getAttribute("data-map-src");
+      var wrap = mapBtn.parentNode;
+      var iframe = document.createElement("iframe");
+      iframe.title = "Map showing Oysterbedz at Dolphin Quay, Mandurah Ocean Marina";
+      iframe.src = src;
+      iframe.loading = "lazy";
+      iframe.referrerPolicy = "no-referrer-when-downgrade";
+      wrap.replaceChild(iframe, mapBtn);
+    });
   }
 
   // Current year in footer

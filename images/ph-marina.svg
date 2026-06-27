@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Mandurah Ocean Marina">
+  <defs>
+    <linearGradient id="gm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f4d60"/>
+      <stop offset="1" stop-color="#082b38"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#gm)"/>
+  <circle cx="620" cy="140" r="46" fill="#e0a458" fill-opacity="0.85"/>
+  <g fill="none" stroke="#fbf7f0" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round">
+    <path d="M60 330 Q160 300 260 330 T460 330 T660 330 T860 330"/>
+    <path d="M40 380 Q140 350 240 380 T440 380 T640 380 T840 380"/>
+    <path d="M60 430 Q160 400 260 430 T460 430 T660 430 T860 430"/>
+  </g>
+  <g fill="none" stroke="#fbf7f0" stroke-opacity="0.7" stroke-width="4" stroke-linecap="round">
+    <path d="M400 150v170"/>
+    <path d="M400 175l70 60-70 18z"/>
+    <path d="M400 175l-70 60 70 18z"/>
+    <path d="M320 320h160l-26 40H346z" fill="#fbf7f0" fill-opacity="0.3"/>
+  </g>
+  <text x="400" y="500" text-anchor="middle" font-family="Georgia, serif" font-size="30" letter-spacing="5" fill="#fbf7f0" fill-opacity="0.8">OYSTERBEDZ</text>
+</svg>
