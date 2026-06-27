@@ -19,6 +19,15 @@
         toggle.setAttribute("aria-expanded", "false");
       }
     });
+
+    // Close on Escape and return focus to the toggle (keyboard accessibility)
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.classList.contains("open")) {
+        menu.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.focus();
+      }
+    });
   }
 
   // Reveal-on-scroll for major sections
@@ -36,7 +45,6 @@
         }
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
