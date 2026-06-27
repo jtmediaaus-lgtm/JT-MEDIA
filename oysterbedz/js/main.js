@@ -2,7 +2,6 @@
 (function () {
   "use strict";
 
-  // Mobile navigation toggle
   var toggle = document.querySelector(".nav-toggle");
   var menu = document.getElementById("nav-menu");
 
@@ -16,6 +15,15 @@
       if (e.target.tagName === "A" && menu.classList.contains("open")) {
         menu.classList.remove("open");
         toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Close on Escape and return focus to the toggle (keyboard accessibility)
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.classList.contains("open")) {
+        menu.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.focus();
       }
     });
   }
